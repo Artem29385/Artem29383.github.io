@@ -1,4 +1,8 @@
 @charset "UTF-8";
+
+body {
+  margin 0;
+}
 .todo {
   position: relative;
   width: 50%;
@@ -253,6 +257,13 @@
   }
 }
 @media (max-width: 601px) {
+  .noclick {
+    width: 90%;
+  }
+
+  .text {
+    font-size: 20px;
+  }
   .todos__input {
     font-size: 20px;
   }
