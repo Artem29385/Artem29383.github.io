@@ -15,7 +15,7 @@ let element
 let tag
 let cache;
 
-//проверяем пуст ли localstorage если нет, помещаем данные на экран 
+
 if (localStorage.getItem('todo') != undefined) {
 			todoArray= JSON.parse(localStorage.getItem('todo'));
 				out();
@@ -26,7 +26,7 @@ function left() {
 	return countLi.length - countChecked.length; 
 }
 todo__enter.onkeydown = function(event) {
-	if (event.key == 'Enter' && todo__enter.value.trim() != '') {                //по нажатии на ентер создается элемент с текстом и тд
+	if (event.key == 'Enter' && todo__enter.value.trim() != '') {               
 		li = document.createElement('li');
 		li.classList.add('item');
 		todo__list.append(li);
@@ -48,16 +48,16 @@ todo__enter.onkeydown = function(event) {
 		label.append(span1);
 		label.append(span2);
 		label.append(btn);
-		label.append(btn2);  //конец создания
-		span2.id =  countLi.length; //даем каждому элементу уникальный ид
-		let temp = {}; //создаем словарь для локал стораге
-		temp.todo = todo__enter.value; //записываем в локал стораге в ключ туду данные (текст)
+		label.append(btn2);  
+		span2.id =  countLi.length; 
+		let temp = {};
+		temp.todo = todo__enter.value; 
 		todo__enter.value = "";
-		temp.check = false; //тоже самое только в ключ check данные тру или фолсе
-		let i = todoArray.length; //с каждым разом массив растет, и элемент i тоже
-		todoArray[i] = temp; //в каждый последующий i мы кладем новое значение todo: value check:true/false
-		localStorage.setItem('todo', JSON.stringify(todoArray)); //из объекта делаем строку и записываем в локал стораге
-		document.querySelector(".todo__count").firstElementChild.innerHTML = left();  //смотрим сколько дел осталось выполнить
+		temp.check = false; 
+		let i = todoArray.length;
+		todoArray[i] = temp; 
+		localStorage.setItem('todo', JSON.stringify(todoArray)); 
+		document.querySelector(".todo__count").firstElementChild.innerHTML = left();  
 		}
 }
 
@@ -79,7 +79,7 @@ function out() {
 }
 
 
-todo__list.addEventListener("click", function(event) { //удаляем элемент по клике на кнопку, один элемент
+todo__list.addEventListener("click", function(event) { 
 
 	if (event.target.className == 'removebtn') {
 	element = event.target.closest('li');
@@ -96,10 +96,10 @@ todo__list.addEventListener("click", function(event) { //удаляем элем
 	element.remove();}
 });
 
-document.querySelector(".todo__count").firstElementChild.innerHTML =   left();//смотрим сколько дел осталось выполнить
+document.querySelector(".todo__count").firstElementChild.innerHTML =   left();
 let count = 0;
 let arrtemp = [];
-todo__list.addEventListener('click',  function(event) {  //сохраняем помеченные чекбоксы в локалстораге, чтобы они остались помеченными
+todo__list.addEventListener('click',  function(event) {  
 	if (event.target.className == 'custom') {
 		event.target.classList.add('check');
 		count++;
@@ -107,14 +107,14 @@ todo__list.addEventListener('click',  function(event) {  //сохраняем п
 		tag = event.target.nextElementSibling.getAttribute('id');
 	cache = JSON.parse(localStorage.getItem('todo'));
 	cache.forEach( function(element, index) {
-		  	if (index == tag -1) {              //если индекс из массива равен помеченному чекбоксу( точней его айдишнику, тогда ставим тру и сохранаем в локал стораге)
+		  	if (index == tag -1) {              
 		  		element.check = true;
 		  		todoArray[index].check = true; 
 		  		localStorage.setItem('todo', JSON.stringify(cache));
 		  	}
 	});
 	}
-	else if (event.target.className == 'custom check') {  //тоже самое, только убираем метку
+	else if (event.target.className == 'custom check') {  
 		tag = event.target.nextElementSibling.getAttribute('id');
 		count--;
 		event.target.classList.remove('check');
@@ -129,19 +129,19 @@ todo__list.addEventListener('click',  function(event) {  //сохраняем п
 	});
 	}
 
-if (document.querySelector(".todo__count").firstElementChild.innerHTML <  countLi.length) {   //показываем кнопку clear
+if (document.querySelector(".todo__count").firstElementChild.innerHTML <  countLi.length) {   
 			document.querySelector('.clear').style.opacity = 1;
 		} else { document.querySelector('.clear').style.opacity = 0;}
 });
 
 
 
-if (document.querySelector(".todo__count").firstElementChild.innerHTML <  countLi.length) { //показываем кнопку clear если какие-то дела выбраны
+if (document.querySelector(".todo__count").firstElementChild.innerHTML <  countLi.length) {
 			document.querySelector('.clear').style.opacity = 1;
 		} else { document.querySelector('.clear').style.opacity = 0;}
 		
 
-clear.onclick = function() {  //удаляем все элементы
+clear.onclick = function() {  
 	let i = 0;
 	let activeElem = todo__list.querySelectorAll('li');
 		cache = JSON.parse(localStorage.getItem('todo'));
@@ -159,7 +159,7 @@ clear.onclick = function() {  //удаляем все элементы
 	
 }
 	let truefalse = false;
-document.querySelector('.header').onclick = (event) => { //выбираем все элементы  или убираем выбор
+document.querySelector('.header').onclick = (event) => { 
 	console.log(document.styleSheets);
 
 	let all = todo__list.querySelectorAll('li');
