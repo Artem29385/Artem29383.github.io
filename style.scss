@@ -1,0 +1,264 @@
+.todo {
+	position: relative;
+	max-width: 50%;
+	left: 50%;
+	top: 150px;
+	transform: translateX(-50%);
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}
+
+.header {
+	width: 100%;
+	text-align: center;
+	color: #4d4d4d;
+	font-weight: 300;
+	
+}
+
+
+.todo h1 {
+	position: absolute;
+	top: -205px;
+    width: 100%;
+    font-size: 100px;
+    font-weight: 100;
+    text-align: center;
+    color: rgba(175, 47, 47, 0.15);
+    -webkit-text-rendering: optimizeLegibility;
+    -moz-text-rendering: optimizeLegibility;
+    text-rendering: optimizeLegibility;
+}
+
+
+.todos__input {
+	position: relative;
+    margin: 0;
+    width: 88%;
+    outline: none;
+    font-size: 24px;
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: 1.4em;
+    border: 0;
+    color: inherit;
+        padding: 16px 16px 16px 60px;
+    border: none;
+    background: rgba(0, 0, 0, 0.003);
+    box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
+    -webkit-font-smoothing: antialiased;
+
+    &::placeholder {
+        opacity: .3;
+        font-style: italic;
+        font-weight: bold;
+        
+    }
+}
+
+.main {
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid #e6e6e6
+}
+
+.toggle__all {
+        width: 20px;
+    height: 20px;
+    border: none;
+    opacity: 0;
+    position: absolute;
+    outline: none;
+    right: 90%;
+    bottom: 75%;
+}
+
+.toggle__all + label {
+    width: 60px;
+    height: 34px;
+    font-size: 0;
+    position: absolute;
+    top: 15px;
+    left: -8px;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+
+    &::before {
+    content: '❯';
+    font-size: 22px;
+    color: #e6e6e6;
+    padding: 10px 27px 10px 27px;
+    }
+}
+
+
+.todo__list {
+    height: auto;
+    position: relative;
+        margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.item {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    height: auto;
+}
+
+
+.toggle {   
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.noclick {
+    border: none;
+    background: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50px;
+    outline: none;
+}
+
+.toggle input {
+    display: none;
+    }
+
+.custom {
+    display: block;
+    width: 30px;
+    margin-right: 20px;
+    margin-left: 0px;
+    padding: 5px;
+    height: 30px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    position: relative;
+
+    &::before {
+        content: '✓';
+        color: green;
+        left: 8px;
+        bottom: 20px;
+        font-size: 28px;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        background: none;
+        border-radius: 50%;
+        transform: scale(0);
+        transition: .4s;
+    }
+}
+
+.text {
+    margin-top: 10px;
+    font-size: 24px;
+    transition: .4s;
+    width: 70%;
+    word-wrap: break-word;
+}
+
+.custom {
+
+    &.check::before {
+            transform: scale(1);
+    }
+
+    &.check + .text {
+       color: #d9d9d9;
+    text-decoration: line-through;
+    }
+
+    &.check + .text +  .removebtn {
+        opacity: 1;
+    }
+
+    &.check + .text + .removebtn + .noclick {
+        width: 85%;
+    }
+}
+
+
+.removebtn {
+    width: 40px;
+    height: 40px;
+    margin: auto 0;
+    background: none;
+    position: absolute;
+    right: 20px;
+    border: none;
+    opacity: 0;
+    outline: none;
+    transition: .4s;
+    margin-right: 10px;
+    font-size: 30px;
+    color: #cc9a9a;
+
+    &::after {
+            content: '×';
+    }
+}
+
+
+.footer {
+    color: #777;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+.todo__count {
+    margin-top: 5px;
+    display: flex;
+}
+
+.todo__count strong {
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.filters {
+    margin-top: 5px;
+    list-style: none;
+    display: flex;
+}
+
+.filters li {
+    margin-right: 5px;
+}
+
+.filters li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.clear {
+        border: 0;
+    background: none;
+    font-size: 100%;
+    vertical-align: baseline;
+    font-family: inherit;
+    font-weight: inherit;
+    outline: none;
+    color: inherit;
+    margin-top: -7px;
+    opacity: 0;
+    transition: .4s;
+}
+/*# sourceMappingURL=style.css.map */
+@media (max-width: 1500px) {
+    .custom {
+    &.check + .text + .removebtn + .noclick {
+        width: 80%;
+    }
+}}
+
+@media (max-width: 1000px) {
+    .custom {
+    &.check + .text + .removebtn + .noclick {
+        width: 70%;
+    }
+}}

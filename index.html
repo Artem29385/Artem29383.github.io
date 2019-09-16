@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Todo</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<section class="todo">
+	<header class="header">
+		<h1>todos</h1>
+		<input type="text" class="todos__input" placeholder="What needs to be done?" autofocus>
+			<input  class="toggle__all" type="checkbox">
+		<label for="toggle__all"></label>
+	</header>
+	<section class="main">
+		<ul class="todo__list">
+			<!-- <li class="item">
+				<label  class="toggle">
+					<input type="checkbox">
+					<span class="custom"></span>
+					<span class="text">125553</span>
+					<button class="removebtn"></button>
+					<button class="noclick"></button>
+				</label>
+			</li> -->
+		</ul>
+	</section>
+	<footer class="footer">
+		<span class="todo__count">
+			<strong>2</strong>
+			item left
+		</span>
+		<ul class="filters">
+			<li>
+				<a href="#/" class="selected">All</a>
+			</li>
+			<li>
+				<a href="#/active" class="selected">Active</a>
+			</li>
+			<li>
+				<a href="#/completed" class="selected">Completed</a>
+			</li>
+		</ul>
+		<button class="clear">
+			Clear completed
+		</button>
+	</footer>
+</section>
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
