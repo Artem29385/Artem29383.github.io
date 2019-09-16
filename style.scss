@@ -1,8 +1,9 @@
 .todo {
 	position: relative;
-	max-width: 50%;
+    width: 50%;
 	left: 50%;
 	top: 150px;
+    max-width: 1920px;
 	transform: translateX(-50%);
 	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
 }
@@ -33,7 +34,7 @@
 .todos__input {
 	position: relative;
     margin: 0;
-    width: 88%;
+    width: 78%;
     outline: none;
     font-size: 24px;
     font-family: inherit;
@@ -254,11 +255,45 @@
     &.check + .text + .removebtn + .noclick {
         width: 80%;
     }
+    .todo {
+        max-width: 1500px;
+    }
 }}
+
+
 
 @media (max-width: 1000px) {
     .custom {
     &.check + .text + .removebtn + .noclick {
         width: 70%;
     }
-}}
+}
+  .todo {
+                width: 100%;
+        max-width: 1000px;
+    }
+}
+
+@media (max-width: 601px) {
+    .todo {
+        max-width: 600px;
+    }
+      .custom {
+    &.check + .text + .removebtn + .noclick {
+        width: 70%;
+    }}
+}
+
+@media (max-width: 400px) {
+     .custom {
+    &.check + .text + .removebtn + .noclick {
+        width: 60%;
+    }}
+}
+
+@media (max-width: 321px) {
+    .todo {
+        max-width: 320px;
+            transform: translateX(-48%);
+    }
+}
