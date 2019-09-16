@@ -253,6 +253,10 @@
   }
 }
 @media (max-width: 601px) {
+  .todos__input {
+    font-size: 20px;
+  }
+
   .todo {
     max-width: 600px;
   }

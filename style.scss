@@ -34,7 +34,7 @@
 .todos__input {
 	position: relative;
     margin: 0;
-    width: 88%;
+    width: 82%;
     outline: none;
     font-size: 24px;
     font-family: inherit;
@@ -275,6 +275,9 @@
 }
 
 @media (max-width: 601px) {
+    .todos__input {
+        font-size: 20px;
+    }
     .todo {
         max-width: 600px;
     }
