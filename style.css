@@ -1,9 +1,10 @@
 @charset "UTF-8";
 .todo {
   position: relative;
-  max-width: 50%;
+  width: 50%;
   left: 50%;
   top: 150px;
+  max-width: 1920px;
   transform: translateX(-50%);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
 }
@@ -237,10 +238,27 @@
   .custom.check + .text + .removebtn + .noclick {
     width: 80%;
   }
+  .custom .todo {
+    max-width: 1500px;
+  }
 }
 @media (max-width: 1000px) {
   .custom.check + .text + .removebtn + .noclick {
     width: 70%;
+  }
+  .custom .todo {
+    max-width: 1000px;
+  }
+}
+@media (max-width: 601px) {
+  .todo {
+    max-width: 600px;
+  }
+}
+@media (max-width: 321px) {
+  .todo {
+    width: 100%;
+    max-width: 320px;
   }
 }
 
