@@ -257,8 +257,11 @@ body {
   }
 }
 @media (max-width: 601px) {
+  .removebtn {
+      right: 7px;
+  }
   .noclick {
-    width: 90%;
+    width: 80%;
   }
 
   .text {
